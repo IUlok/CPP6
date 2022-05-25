@@ -33,7 +33,7 @@ public:
     {
         for (int i = 0; i < x; i++)
         {
-            out << _array.array[i] << endl;
+          out <<_array.array[i] << endl;
         }
         return out;
     }
