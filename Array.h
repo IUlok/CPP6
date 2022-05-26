@@ -1,22 +1,22 @@
 #pragma once
 #include <iostream>
 using namespace std;
-template <int x, typename DataType>
-class CArray
+template <int x, typename DataType> // Объявление шаблона
+class CArray // Объявление класса (шаблонного)
 {
 private:
-    DataType* array;
+    DataType* array; // Создание массива указанного типа
 public:
-    CArray()
+    CArray() // Конструктор
     {
-        cout << "Output" << endl;
-        array = new DataType[x];
+        cout << "Input" << endl;
+        array = new DataType[x]; // Создание массива указателей заданного типа
     }
-    ~CArray()
+    ~CArray() // Деструктор
     {
         delete[] array;
     }
-//Перегрузка индекса
+// Перегрузка индекса
     DataType& operator[] (int index)
     {
         if ((index < x) or (index >= 0))
@@ -28,7 +28,7 @@ public:
             exit(0);
         }
     }
-//Перегрузка вывода
+// Перегрузка вывода
     friend ostream& operator << (ostream& out, CArray<x, DataType>& _array)
     {
         for (int i = 0; i < x; i++)
